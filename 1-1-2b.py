@@ -34,7 +34,7 @@ painter.forward(50)
 
 # add code here to create a polygon of your choice using the circle method
 painter.pendown()
-painter.circle(100, 360, 6)
+painter.circle(100, 360, 8)
 
 painter.hideturtle()
 
