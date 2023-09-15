@@ -2,7 +2,6 @@ import turtle
 import time
 
 painter = turtle.Turtle()
-
 def restart(type):
   print(f"⚠ Please enter a valid {type} ⚠")
   print("Restarting...")
@@ -25,7 +24,6 @@ while True:
     
   except ValueError:
     restart(type="radius")
-
 
 wn = turtle.Screen()
 wn.mainloop()
