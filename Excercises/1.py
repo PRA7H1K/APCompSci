@@ -25,7 +25,6 @@ painter.pencolor(pencolor)
 painter.circle(50, 90, 2)
 painter.circle(180, 180, 3)
 painter.circle(270, 270, 4)
-painter.fillcolor("green")
 
 
 wn = turtle.Screen()
