@@ -109,7 +109,7 @@ painter.right(60)
 painter.forward(250)
 painter.end_fill()
 
-# Cut
+# Cut the overflowing edges of the board out
 painter.fillcolor("white")
 painter.begin_fill()
 painter.penup()
@@ -125,7 +125,7 @@ painter.left(90)
 painter.forward(50)
 painter.end_fill()
 
-## Side
+
 # Edge of board to give 3D effect
 painter.goto(-87.50,41.46)
 painter.right(90)
@@ -157,6 +157,7 @@ painter.left(120)
 painter.forward(310)
 painter.end_fill()
 
+
 # Re-outline to crisp edges
 painter.penup()
 painter.home()
@@ -180,6 +181,9 @@ painter.penup()
 painter.home()
 
 # Function that makes waves
+"""
+Circle radius is randomized to add more authenticity to each code run and to make more realistic waves
+"""
 def waves(wave_amount):
     loop = 1
     while loop != wave_amount:
@@ -364,12 +368,36 @@ def letter(letter_name: str):
         print("ERROR: Letter requested not found")
 
 # Letters
+"""
+Calculations to perfectly center letters with album cover
+
+Melodic Blue
+Start of letter M: (-177.27,225.00)
+End of letter E: (232.26,225.00)
+
+Find Displacement:
+232.26 + 177.27
+= 409.53
+
+Subtract displacement from total length of album cover
+440 - 409.53
+= 30.47
+
+Find length beside title
+30.47 / 2
+= 15.235
+
+Subtract side length from half of album cover length
+220 - 15.235
+= 204.765
+"""
+
 painter.penup()
 painter.home()
 painter.left(90)
 painter.forward(225)
 painter.left(90)
-painter.forward(185)
+painter.forward(204.765)
 painter.left(180)
 
 painter.pendown()
@@ -381,14 +409,14 @@ for name in letters:
     painter.penup()
     # gaps between letters
     if name == "C":
-        painter.forward(20)
+        painter.forward(30)
     else:
-        painter.forward(5)
+        painter.forward(10)
     painter.pendown()
 
 
 painter.hideturtle()
 
 # create screen object and make it persist
-wn = turtle.Screen()
-wn.mainloop()
+window = turtle.Screen()
+window.mainloop()
