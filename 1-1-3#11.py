@@ -1,7 +1,7 @@
 import turtle as trtl
 
 painter = trtl.Turtle()
-painter.speed('fastest')
+painter.speed('normal')
 
 # Stem
 painter.color("green")
@@ -9,6 +9,19 @@ painter.pensize(15)
 painter.goto(0, -150)
 painter.setheading(90)
 painter.forward(100)
+
+#  leaf
+painter.setheading(270)
+painter.circle(20, 120, 20)
+painter.setheading(90)
+painter.goto(0, -60)
+
+#  leaf
+painter.setheading(270)
+painter.right(180)
+painter.circle(20, 120, 20)
+painter.setheading(90)
+painter.goto(0, -60)
 
 # Stem Continued
 painter.forward(60)
@@ -41,7 +54,7 @@ for petal in range(12):
 painter.goto(20,130)
 painter.color("brown")
 
-for petal in range(12):
+for petal in range(6):
   painter.right(60)
   painter.forward(30)
   painter.stamp()
